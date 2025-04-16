@@ -26,7 +26,7 @@ let userId: number | string
 userId = '88'
 
 // Literal Types
-type Directions = 'up' | 'down' | 'left' | 'right'
+type Directions = 'up' | 'right' | 'down' | 'left'
 let move: Directions = 'up' // only 4 options above allowed
 
 // Enums
