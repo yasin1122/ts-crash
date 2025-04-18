@@ -67,7 +67,7 @@ function getArray(items) {
 }
 let numArray = getArray([1, 2, 3]);
 let strArray = getArray(['HTML', 'CSS', 'JS']);
-// Try implementing these
+// Try implementing each of these
 // Partial<T>: Makes all properties in T optional.
 // Required<T>: Makes all properties in T required.
 // Readonly<T>: Makes all properties in T read-only.
