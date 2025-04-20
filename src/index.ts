@@ -129,3 +129,19 @@ let strArray = getArray<string>(['HTML', 'CSS', 'JS'])
 // Readonly<T>: Makes all properties in T read-only.
 // Pick<T, K>: Picks a set of properties K from T.
 // Omit<T, K>: Constructs a type by omitting keys K from T.
+
+type MapKey = string | boolean | number[]
+type MapVal = string | boolean
+
+const newMap: Map<MapKey, MapVal> = new Map([
+  ['name', 'Yasin'],
+  ['verified', true]
+] as [MapKey, MapVal][])
+newMap.set([1, 2, 3], false)
+newMap.set(false, 'Hello')
+// newMap.delete(false)
+
+newMap.forEach((value, key) => {
+  console.log(key, value)
+})
+console.log(newMap.size)
