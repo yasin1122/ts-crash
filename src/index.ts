@@ -130,6 +130,7 @@ let strArray = getArray<string>(['HTML', 'CSS', 'JS'])
 // Pick<T, K>: Picks a set of properties K from T.
 // Omit<T, K>: Constructs a type by omitting keys K from T.
 
+// Map example
 type MapKey = string | boolean | number[]
 type MapVal = string | boolean
 
