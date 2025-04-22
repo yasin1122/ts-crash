@@ -84,3 +84,11 @@ function identity(value) {
 }
 const stringIdentity = identity('Hello');
 const numberIdentity = identity(22);
+function wrapInArray(item) {
+    return [item];
+}
+const numWrap = wrapInArray(11);
+function returnFirst(arr) {
+    return arr[0];
+}
+const num = returnFirst([1, 2, 3]);

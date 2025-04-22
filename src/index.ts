@@ -153,3 +153,13 @@ function identity<T>(value: T): T {
 }
 const stringIdentity = identity('Hello')
 const numberIdentity = identity(22)
+
+function wrapInArray<T>(item: T): T[] {
+  return [item]
+}
+const numWrap = wrapInArray(11)
+
+function returnFirst<T>(arr: T[]): T {
+  return arr[0]
+}
+const num = returnFirst([1, 2, 3])
