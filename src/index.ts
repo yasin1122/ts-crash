@@ -146,3 +146,10 @@ newMap.forEach((value, key) => {
   console.log(key, value)
 })
 console.log(newMap.size)
+
+// Generics Practice
+function identity<T>(value: T): T {
+  return value
+}
+const stringIdentity = identity('Hello')
+const numberIdentity = identity(22)
