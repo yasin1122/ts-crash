@@ -91,4 +91,3 @@ const numWrap = wrapInArray(11);
 function returnFirst(arr) {
     return arr[0];
 }
-const num = returnFirst([1, 2, 3]);

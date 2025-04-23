@@ -162,4 +162,3 @@ const numWrap = wrapInArray(11)
 function returnFirst<T>(arr: T[]): T {
   return arr[0]
 }
-const num = returnFirst([1, 2, 3])
