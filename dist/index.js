@@ -73,7 +73,7 @@ const newMap = new Map([
 ]);
 newMap.set([1, 2, 3], false);
 newMap.set(false, 'Hello');
-// newMap.delete(false)
+newMap.delete(false);
 newMap.forEach((value, key) => {
     console.log(key, value);
 });
