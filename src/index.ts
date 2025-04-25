@@ -123,7 +123,7 @@ function getArray<T>(items: T[]): T[] {
 let numArray = getArray<number>([1, 2, 3])
 let strArray = getArray<string>(['HTML', 'CSS', 'JS'])
 
-// Try implementing each of these
+// Try implementing these
 // Partial<T>: Makes all properties in T optional.
 // Required<T>: Makes all properties in T required.
 // Readonly<T>: Makes all properties in T read-only.
