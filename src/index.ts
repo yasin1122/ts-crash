@@ -162,4 +162,4 @@ const numWrap = wrapInArray(11)
 function returnFirst<T>(arr: T[]): T {
   return arr[0]
 }
-// day
+// day2
