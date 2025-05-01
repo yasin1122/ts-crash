@@ -92,14 +92,23 @@ function returnFirst(arr) {
   return arr[0]
 }
 // day3
-const fn = n => n + 1
-
-var map = function (arr, fn) {
-  const newArr = arr.map(el => {
-    const newEl = fn(el)
-    return newEl
-  })
-  return newArr
+var reduce = function (nums, fn, init) {
+  if (nums.length === 0) {
+    return init
+  }
+  let total = init
+  for (let i = 0; i < nums.length; i++) {
+    let temp = fn(total + nums[i])
+    total += temp
+  }
+  return total
 }
 
-console.log(map([1, 2, 3], fn))
+let nums = [1, 2, 3, 4]
+
+let fn = function sum(accum, curr) {
+  return accum + curr
+}
+let init = 0
+
+console.log(reduce(nums, fn, init))
