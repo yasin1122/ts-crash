@@ -91,7 +91,7 @@ const numWrap = wrapInArray(11)
 function returnFirst(arr) {
   return arr[0]
 }
-// day5
+// day6
 
 let obj1 = { hello: 'world' }
 console.log(Object.keys(obj1).length)
