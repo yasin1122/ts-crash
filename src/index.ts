@@ -163,4 +163,4 @@ function returnFirst<T>(arr: T[]): T {
   return arr[0]
 }
 
-// day 1
+// day 2
