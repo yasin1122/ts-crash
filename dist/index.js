@@ -95,3 +95,6 @@ function returnFirst(arr) {
 
 let obj1 = { hello: 'world' }
 console.log(Object.keys(obj1).length)
+
+const ranFun = () => () => () => 'Hello'
+console.log(ranFun()()())
