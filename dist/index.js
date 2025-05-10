@@ -98,3 +98,13 @@ console.log(Object.keys(obj1).length)
 
 const ranFun = () => () => () => 'Hello'
 console.log(ranFun()()())
+
+const fuFun = someNum => {
+  return {
+    increment() {
+      return someNum++
+    }
+  }
+}
+
+console.log(fuFun(10).increment())
