@@ -100,11 +100,15 @@ const ranFun = () => () => () => 'Hello'
 console.log(ranFun()()())
 
 const fuFun = someNum => {
+  const increment = () => ++someNum
+  const decrement = () => --someNum
   return {
-    increment() {
-      return someNum++
-    }
+    increment,
+    decrement
   }
 }
 
-console.log(fuFun(10).increment())
+const funcObj = fuFun(10)
+console.log(funcObj.increment())
+console.log(funcObj.increment())
+console.log(funcObj.increment())
