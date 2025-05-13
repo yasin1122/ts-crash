@@ -115,3 +115,4 @@ console.log(funcObj.increment())
 
 const someMap = new Map()
 const customMap = {}
+//day
