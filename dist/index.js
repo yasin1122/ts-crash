@@ -112,3 +112,6 @@ const funcObj = fuFun(10)
 console.log(funcObj.increment())
 console.log(funcObj.increment())
 console.log(funcObj.increment())
+
+const someMap = new Map()
+const customMap = {}
