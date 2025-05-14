@@ -26,3 +26,5 @@ function palindrome(str) {
   return str.split('').every((char, i) => char === str[str.length - 1 - i])
 }
 console.log(palindrome('abcdcba'))
+
+// Section 5: Integer Reversal
