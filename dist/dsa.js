@@ -45,14 +45,17 @@ function reverseInt(n) {
 
   // return Number
 
-  const isNegative = n < 0 ? true : false
-  let reversedNum = 0
-  n = isNegative ? -n : n
+  // const isNegative = n < 0 ? true : false
+  // let reversedNum = 0
+  // n = isNegative ? -n : n
 
-  while (n !== 0) {
-    reversedNum = reversedNum * 10 + (n % 10)
-    n = (n / 10) | 0
-  }
-  return isNegative ? -reversedNum : reversedNum
+  // while (n !== 0) {
+  //   reversedNum = reversedNum * 10 + (n % 10)
+  //   n = (n / 10) | 0
+  // }
+  // return isNegative ? -reversedNum : reversedNum
+
+  const reversedNum = n.toString().split('').reverse().join('')
+  return reversedNum * Math.sign(n)
 }
-console.log(reverseInt(-123400))
+console.log(reverseInt(123400))
