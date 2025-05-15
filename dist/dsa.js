@@ -67,11 +67,7 @@ function maxChar(str) {
   let maxCh = ''
 
   for (let char of str.split('')) {
-    if (charMap.has(char)) {
-      charMap.set(char, charMap.get(char) + 1)
-    } else {
-      charMap.set(char, 1)
-    }
+    charMap.set(char, charMap.get(char) + 1 || 1)
     if (charMap.get(char) > maxNum) {
       maxNum = charMap.get(char)
       maxCh = char
