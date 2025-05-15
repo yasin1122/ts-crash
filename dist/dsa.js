@@ -28,3 +28,18 @@ function palindrome(str) {
 console.log(palindrome('abcdcba'))
 
 // Section 5: Integer Reversal
+function reverseInt(n) {
+  // if(n < 0) {
+  //     return 0 - Number(String(n).split('').reverse().join('').slice(0, -1))
+  // }
+  // return Number(String(n).split('').reverse().join(''))
+  // const arr = n < 0 ? ['-'] : []
+  // n = Math.abs(n)
+  // while(Math.abs(n) > 9) {
+  //     arr.push(n % 10)
+  //     n = (n - (n % 10)) / 10
+  // }
+  // arr.push(n)
+  // return Number(arr.join(''))
+}
+console.log(reverseInt(-1234))
