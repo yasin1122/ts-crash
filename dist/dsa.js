@@ -59,3 +59,24 @@ function reverseInt(n) {
   return reversedNum * Math.sign(n)
 }
 console.log(reverseInt(123400))
+
+// Section 6: MaxChars
+function maxChar(str) {
+  const charMap = new Map()
+  let maxNum = 0
+  let maxCh = ''
+
+  for (let char of str.split('')) {
+    if (charMap.has(char)) {
+      charMap.set(char, charMap.get(char) + 1)
+    } else {
+      charMap.set(char, 1)
+    }
+    if (charMap.get(char) > maxNum) {
+      maxNum = charMap.get(char)
+      maxCh = char
+    }
+  }
+  return maxCh
+}
+console.log(maxChar('csdyyyyyyfasdfaaa'))
