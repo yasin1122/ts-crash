@@ -80,3 +80,14 @@ function maxChar(str) {
   return maxCh
 }
 console.log(maxChar('csdyyyyyyfasdfaaa'))
+
+// Section 7: FizzBuzz
+function fizzBuzz(n) {
+  for (let i = 1; i <= n; i++) {
+    let output = ''
+    i % 3 === 0 && (output += 'fizz')
+    i % 5 === 0 && (output += 'buzz')
+    console.log(output || i)
+  }
+}
+fizzBuzz(15)
