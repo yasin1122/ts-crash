@@ -33,13 +33,26 @@ function reverseInt(n) {
   //     return 0 - Number(String(n).split('').reverse().join('').slice(0, -1))
   // }
   // return Number(String(n).split('').reverse().join(''))
+
   // const arr = n < 0 ? ['-'] : []
   // n = Math.abs(n)
+
   // while(Math.abs(n) > 9) {
   //     arr.push(n % 10)
   //     n = (n - (n % 10)) / 10
   // }
   // arr.push(n)
-  // return Number(arr.join(''))
+
+  // return Number
+
+  const isNegative = n < 0 ? true : false
+  let reversedNum = 0
+  n = isNegative ? -n : n
+
+  while (n !== 0) {
+    reversedNum = reversedNum * 10 + (n % 10)
+    n = (n / 10) | 0
+  }
+  return isNegative ? -reversedNum : reversedNum
 }
-console.log(reverseInt(-1234))
+console.log(reverseInt(-123400))
