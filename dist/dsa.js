@@ -62,14 +62,18 @@ console.log(reverseInt(123400))
 
 // Section 6: MaxChars
 function maxChar(str) {
-  const charMap = new Map()
+  // const charMap = new Map()
+  const charMap = {}
   let maxNum = 0
   let maxCh = ''
 
   for (let char of str.split('')) {
-    charMap.set(char, charMap.get(char) + 1 || 1)
-    if (charMap.get(char) > maxNum) {
-      maxNum = charMap.get(char)
+    // charMap.set(char, charMap.get(char) + 1 || 1)
+    charMap[char] = charMap[char] + 1 || 1
+    // if (charMap.get(char) > maxNum) {
+    //   maxNum = charMap.get(char)
+    if (charMap[char] > maxNum) {
+      maxNum = charMap[char]
       maxCh = char
     }
   }
