@@ -125,20 +125,19 @@ function anagrams(stringA, stringB) {
   //     .sort()
   //     .join('')
   // )
-  const cleanString = str => str.replace(/[^a-zA-Z]/g, '').toLowerCase()
-  const cleanStringA = cleanString(stringA)
-  const cleanStringB = cleanString(stringB)
-  if (cleanStringA.length !== cleanStringB.length) return false
 
   const stringMapMaker = str => {
     const stringMap = {}
-    for (const char of str) {
+    for (const char of str.replace(/[^a-zA-Z]/g, '').toLowerCase()) {
       stringMap[char] = stringMap[char] + 1 || 1
     }
     return stringMap
   }
-  const stringMapA = stringMapMaker(cleanStringA)
-  const stringMapB = stringMapMaker(cleanStringB)
+  const stringMapA = stringMapMaker(stringA)
+  const stringMapB = stringMapMaker(stringB)
+
+  if (Object.keys(stringMapA).length !== Object.keys(stringMapB).length)
+    return false
 
   for (const key of Object.keys(stringMapA)) {
     if (stringMapA[key] !== stringMapB[key]) return false
