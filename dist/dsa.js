@@ -185,3 +185,14 @@ function steps(n, row = 0, stair = '') {
   steps(n, row, stair)
 }
 steps(5)
+
+// Section 12: Two Sided Steps - Pyramids
+function pyramid(n) {
+  // iterate n levels and print each step
+  // print n - i ' ' on start and end
+  // print i * 2 - 1 number of # in the middle
+  for (let i = 1; i <= n; i++) {
+    console.log(' '.repeat(n - i) + '#'.repeat(i * 2 - 1) + ' '.repeat(n - i))
+  }
+}
+pyramid(4)
