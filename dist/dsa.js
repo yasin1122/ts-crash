@@ -141,3 +141,12 @@ function anagrams(stringA, stringB) {
   // return true
 }
 console.log(anagrams('RAIL! SAFETY!', 'fairy tales'))
+
+// Section 10: Sentence Capitalization
+function capitalize(str) {
+  return str
+    .split(' ')
+    .map(word => word[0].toUpperCase() + word.slice(1))
+    .join(' ')
+}
+console.log(capitalize('how are you doing?'))
