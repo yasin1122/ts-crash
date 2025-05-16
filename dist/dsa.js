@@ -106,3 +106,44 @@ function chunk(array, size) {
   return result
 }
 console.log(chunk([0, 1, 2, 3, 4, 5, 6], 2))
+
+// Section 9: Anagrams
+function anagrams(stringA, stringB) {
+  // remove spaces, extra characters and lowercase both inputs
+  // cast strings to arrays, sort them, join them and compare them
+  return (
+    stringA
+      .replace(/[^a-zA-Z]/g, '')
+      .toLowerCase()
+      .split('')
+      .sort()
+      .join('') ===
+    stringB
+      .replace(/[^a-zA-Z]/g, '')
+      .toLowerCase()
+      .split('')
+      .sort()
+      .join('')
+  )
+  // const cleanStringA = stringA.replace(/[^a-zA-Z]/g, '').toLowerCase()
+  // const cleanStringB = stringB.replace(/[^a-zA-Z]/g, '').toLowerCase()
+  // if (cleanStringA.length !== cleanStringB.length) return false
+
+  // const stringMapA = {}
+  // const stringMapB = {}
+
+  // for (const char of cleanStringA) {
+  //   stringMapA[char] = stringMapA[char] + 1 || 1
+  // }
+
+  // for (const char of cleanStringB) {
+  //   stringMapB[char] = stringMapB[char] + 1 || 1
+  // }
+
+  // for (const key of Object.keys(stringMapA)) {
+  //   if (stringMapA[key] !== stringMapB[key]) return false
+  // }
+
+  // return true
+}
+console.log(anagrams('RAIL! SAFETY!', 'fairy tales'))
