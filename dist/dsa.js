@@ -211,3 +211,12 @@ function pyramid(n, row = 0, level = '') {
 pyramid(4)
 
 // Section 13: Find the Vowels
+function vowels(str) {
+  const vowels = { a: 'a', e: 'e', i: 'i', o: 'o', u: 'u' }
+  let count = 0
+  for (let i = 0; i < str.length; i++) {
+    vowels[str[i].toLowerCase()] && count++
+  }
+  return count
+}
+console.log(vowels('Hello World'))
