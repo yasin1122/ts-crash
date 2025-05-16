@@ -111,39 +111,39 @@ console.log(chunk([0, 1, 2, 3, 4, 5, 6], 2))
 function anagrams(stringA, stringB) {
   // remove spaces, extra characters and lowercase both inputs
   // cast strings to arrays, sort them, join them and compare them
-  return (
-    stringA
-      .replace(/[^a-zA-Z]/g, '')
-      .toLowerCase()
-      .split('')
-      .sort()
-      .join('') ===
-    stringB
-      .replace(/[^a-zA-Z]/g, '')
-      .toLowerCase()
-      .split('')
-      .sort()
-      .join('')
-  )
-  // const cleanStringA = stringA.replace(/[^a-zA-Z]/g, '').toLowerCase()
-  // const cleanStringB = stringB.replace(/[^a-zA-Z]/g, '').toLowerCase()
-  // if (cleanStringA.length !== cleanStringB.length) return false
+  // return (
+  //   stringA
+  //     .replace(/[^a-zA-Z]/g, '')
+  //     .toLowerCase()
+  //     .split('')
+  //     .sort()
+  //     .join('') ===
+  //   stringB
+  //     .replace(/[^a-zA-Z]/g, '')
+  //     .toLowerCase()
+  //     .split('')
+  //     .sort()
+  //     .join('')
+  // )
+  const cleanString = str => str.replace(/[^a-zA-Z]/g, '').toLowerCase()
+  const cleanStringA = cleanString(stringA)
+  const cleanStringB = cleanString(stringB)
+  if (cleanStringA.length !== cleanStringB.length) return false
 
-  // const stringMapA = {}
-  // const stringMapB = {}
+  const stringMapMaker = str => {
+    const stringMap = {}
+    for (const char of str) {
+      stringMap[char] = stringMap[char] + 1 || 1
+    }
+    return stringMap
+  }
+  const stringMapA = stringMapMaker(cleanStringA)
+  const stringMapB = stringMapMaker(cleanStringB)
 
-  // for (const char of cleanStringA) {
-  //   stringMapA[char] = stringMapA[char] + 1 || 1
-  // }
+  for (const key of Object.keys(stringMapA)) {
+    if (stringMapA[key] !== stringMapB[key]) return false
+  }
 
-  // for (const char of cleanStringB) {
-  //   stringMapB[char] = stringMapB[char] + 1 || 1
-  // }
-
-  // for (const key of Object.keys(stringMapA)) {
-  //   if (stringMapA[key] !== stringMapB[key]) return false
-  // }
-
-  // return true
+  return true
 }
 console.log(anagrams('RAIL! SAFETY!', 'fairy tales'))
