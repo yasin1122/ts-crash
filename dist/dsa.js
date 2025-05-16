@@ -96,7 +96,13 @@ fizzBuzz(15)
 function chunk(array, size) {
   const result = []
   for (let i = 0; i < array.length; i += size) {
-    result.push(array.slice(i, i + size))
+    // result.push(array.slice(i, i + size))
+    const innerArr = []
+    for (let j = i; j < i + size && j < array.length; j++) {
+      innerArr.push(array[j])
+    }
+    result.push(innerArr)
   }
   return result
 }
+console.log(chunk([0, 1, 2, 3, 4, 5, 6], 2))
