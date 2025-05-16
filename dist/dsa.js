@@ -163,7 +163,7 @@ function capitalize(str) {
 console.log(capitalize('how are you doing?'))
 
 // Section 11: Printing Steps
-function steps(n) {
+function steps(n, row = 0, stair = '') {
   // iterate 1 to n inclusive
   // print i number of # and n - i number of spaces
   // for (let i = 1; i <= n; i++) {
@@ -173,8 +173,15 @@ function steps(n) {
   //   }
   //   console.log(logString)
   // }
-  for (let i = 1; i <= n; i++) {
-    console.log('#'.repeat(i) + ' '.repeat(n - i))
+  // for (let i = 1; i <= n; i++) {
+  //   console.log('#'.repeat(i) + ' '.repeat(n - i))
+  // }
+  if (n === row) return
+  if (n === stair.length) {
+    console.log(stair)
+    return steps(n, ++row)
   }
+  stair.length <= row ? (stair += '#') : (stair += ' ')
+  steps(n, row, stair)
 }
 steps(5)
