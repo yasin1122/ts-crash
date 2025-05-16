@@ -144,9 +144,20 @@ console.log(anagrams('RAIL! SAFETY!', 'fairy tales'))
 
 // Section 10: Sentence Capitalization
 function capitalize(str) {
-  return str
-    .split(' ')
-    .map(word => word[0].toUpperCase() + word.slice(1))
-    .join(' ')
+  // return str
+  //   .split(' ')
+  //   .map(word => word[0].toUpperCase() + word.slice(1))
+  //   .join(' ')
+  let capitalizedStr = ''
+  for (let i = 0; i < str.length; i++) {
+    if (i === 0) {
+      capitalizedStr += str[i].toUpperCase()
+    } else if (str[i - 1] === ' ') {
+      capitalizedStr += str[i].toUpperCase()
+    } else {
+      capitalizedStr += str[i]
+    }
+  }
+  return capitalizedStr
 }
 console.log(capitalize('how are you doing?'))
