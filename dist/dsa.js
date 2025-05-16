@@ -187,12 +187,25 @@ function steps(n, row = 0, stair = '') {
 steps(5)
 
 // Section 12: Two Sided Steps - Pyramids
-function pyramid(n) {
+function pyramid(n, row = 0, stair = '') {
   // iterate n levels and print each step
   // print n - i ' ' on start and end
   // print i * 2 - 1 number of # in the middle
-  for (let i = 1; i <= n; i++) {
-    console.log(' '.repeat(n - i) + '#'.repeat(i * 2 - 1) + ' '.repeat(n - i))
+  // for (let i = 1; i <= n; i++) {
+  //   console.log(' '.repeat(n - i) + '#'.repeat(i * 2 - 1) + ' '.repeat(n - i))
+  // }
+  const totalColumns = 2 * n - 1
+  if (n === row) return
+  if (totalColumns === stair.length) {
+    console.log(stair)
+    return pyramid(n, ++row)
   }
+  const midpoint = Math.floor(totalColumns / 2)
+  if (stair.length >= midpoint - row && stair.length <= midpoint + row) {
+    stair += '#'
+  } else {
+    stair += ' '
+  }
+  pyramid(n, row, stair)
 }
 pyramid(4)
