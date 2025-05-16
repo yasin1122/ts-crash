@@ -111,38 +111,33 @@ console.log(chunk([0, 1, 2, 3, 4, 5, 6], 2))
 function anagrams(stringA, stringB) {
   // remove spaces, extra characters and lowercase both inputs
   // cast strings to arrays, sort them, join them and compare them
-  // return (
-  //   stringA
-  //     .replace(/[^a-zA-Z]/g, '')
-  //     .toLowerCase()
-  //     .split('')
-  //     .sort()
-  //     .join('') ===
-  //   stringB
-  //     .replace(/[^a-zA-Z]/g, '')
-  //     .toLowerCase()
-  //     .split('')
-  //     .sort()
-  //     .join('')
-  // )
+  const cleanStr = str =>
+    str
+      .replace(/[^a-zA-Z]/g, '')
+      .toLowerCase()
+      .split('')
+      .sort()
+      .join('')
+  return cleanStr(stringA) === cleanStr(stringB)
 
-  const stringMapMaker = str => {
-    const stringMap = {}
-    for (const char of str.replace(/[^a-zA-Z]/g, '').toLowerCase()) {
-      stringMap[char] = stringMap[char] + 1 || 1
-    }
-    return stringMap
-  }
-  const stringMapA = stringMapMaker(stringA)
-  const stringMapB = stringMapMaker(stringB)
+  // const stringMapMaker = str => {
+  //   const stringMap = {}
+  //   for (const char of str.replace(/[^a-zA-Z]/g, '').toLowerCase()) {
+  //     stringMap[char] = stringMap[char] + 1 || 1
+  //   }
+  //   return stringMap
+  // }
+  // const stringMapA = stringMapMaker(stringA)
+  // const stringMapB = stringMapMaker(stringB)
 
-  if (Object.keys(stringMapA).length !== Object.keys(stringMapB).length)
-    return false
+  // if (Object.keys(stringMapA).length !== Object.keys(stringMapB).length) {
+  //   return false
+  // }
 
-  for (const key of Object.keys(stringMapA)) {
-    if (stringMapA[key] !== stringMapB[key]) return false
-  }
+  // for (const key of Object.keys(stringMapA)) {
+  //   if (stringMapA[key] !== stringMapB[key]) return false
+  // }
 
-  return true
+  // return true
 }
 console.log(anagrams('RAIL! SAFETY!', 'fairy tales'))
