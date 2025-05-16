@@ -179,7 +179,7 @@ function steps(n, row = 0, stair = '') {
   if (n === row) return
   if (n === stair.length) {
     console.log(stair)
-    return steps(n, ++row)
+    return steps(n, row + 1)
   }
   stair.length <= row ? (stair += '#') : (stair += ' ')
   steps(n, row, stair)
@@ -198,7 +198,7 @@ function pyramid(n, row = 0, level = '') {
   if (n === row) return
   if (totalColumns === level.length) {
     console.log(level)
-    return pyramid(n, ++row)
+    return pyramid(n, row + 1)
   }
   const midpoint = Math.floor(totalColumns / 2)
   if (level.length >= midpoint - row && level.length <= midpoint + row) {
@@ -209,3 +209,5 @@ function pyramid(n, row = 0, level = '') {
   pyramid(n, row, level)
 }
 pyramid(4)
+
+// Section 13: Find the Vowels
