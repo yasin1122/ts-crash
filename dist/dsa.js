@@ -161,3 +161,17 @@ function capitalize(str) {
   return capitalizedStr
 }
 console.log(capitalize('how are you doing?'))
+
+// Section 11: Printing Steps
+function steps(n) {
+  // iterate 1 to n inclusive
+  // print i number of # and n - i number of spaces
+  for (let i = 1; i <= n; i++) {
+    let logString = ''
+    for (let j = 1; j <= n; j++) {
+      j <= i ? (logString += '#') : (logString += ' ')
+    }
+    console.log(logString)
+  }
+}
+steps(5)
