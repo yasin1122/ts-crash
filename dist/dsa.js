@@ -212,15 +212,18 @@ pyramid(4)
 
 // Section 13: Find the Vowels
 function vowels(str) {
-  let count = 0
-  // const vowels = { a: 'a', e: 'e', i: 'i', o: 'o', u: 'u' }
-  // for (let i = 0; i < str.length; i++) {
-  //   vowels[str[i].toLowerCase()] && count++
+  // let count = 0
+  // // const vowels = { a: 'a', e: 'e', i: 'i', o: 'o', u: 'u' }
+  // // for (let i = 0; i < str.length; i++) {
+  // //   vowels[str[i].toLowerCase()] && count++
+  // // }
+  // const vowelChars = new Set(['a', 'e', 'i', 'o', 'u'])
+  // for (const char of str.toLowerCase()) {
+  //   vowelChars.has(char) && count++
   // }
-  const vowelChars = new Set(['a', 'e', 'i', 'o', 'u'])
-  for (const char of str) {
-    vowelChars.has(char) && count++
-  }
-  return count
+  // return count
+  return str.match(/[aeiou]/gi).length || 0
 }
 console.log(vowels('Hello World'))
+
+// Section 14: Enter the Matrix Spiral
