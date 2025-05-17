@@ -277,17 +277,33 @@ console.log(matrix(4))
 
 // Section 16: Runtime Complexity in Practice - Fibonacci
 function fib(n) {
-  // if (n === 0) return 0
-  // if (n === 1) return 1
-  // return fib(n - 1) + fib(n - 2)
-
   if (n < 2) return n
-  let prev = 0
-  let curr = 1
-  for (let i = 2; i <= n; i++) {
-    ;[prev, curr] = [curr, prev + curr]
-  }
-  return curr
+  return fib(n - 1) + fib(n - 2)
+
+  // if (n < 2) return n
+  // let prev = 0
+  // let curr = 1
+  // for (let i = 2; i <= n; i++) {
+  //   ;[prev, curr] = [curr, prev + curr]
+  // }
+  // return curr
 }
 
-console.log(fib(7))
+function memoize(fn) {
+  const cache = new Map()
+
+  return function (...args) {
+    const key = args.length === 1 ? args[0] : JSON.stringify(args)
+
+    if (cache.has(key)) {
+      return cache.get(key)
+    }
+
+    const result = fn(...args)
+    cache.set(key, result)
+    return result
+  }
+}
+
+fib = memoize(fib)
+console.log(fib(10))
