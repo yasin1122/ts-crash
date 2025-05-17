@@ -271,3 +271,8 @@ function matrix(n) {
   return matrix
 }
 console.log(matrix(4))
+
+// Section 15: Runtime Complexity
+// Big(O) review
+
+// Section 16: Runtime Complexity in Practice - Fibonacci
