@@ -227,3 +227,47 @@ function vowels(str) {
 console.log(vowels('Hello World'))
 
 // Section 14: Enter the Matrix Spiral
+function matrix(n) {
+  let startRow = 0
+  let startCol = 0
+  let endRow = n - 1
+  let endCol = n - 1
+  let counter = 1
+  let matrix = []
+
+  for (let i = 0; i < n; i++) {
+    matrix.push([])
+  }
+
+  while (startRow <= endRow && startCol <= endCol) {
+    // top row
+    for (let i = startCol; i <= endRow; i++) {
+      matrix[startRow][i] = counter
+      counter++
+    }
+    startRow++
+
+    // right column
+    for (let i = startRow; i <= endRow; i++) {
+      matrix[i][endCol] = counter
+      counter++
+    }
+    endCol--
+
+    // bottom row
+    for (let i = endCol; i >= startCol; i--) {
+      matrix[endRow][i] = counter
+      counter++
+    }
+    endRow--
+
+    // left column
+    for (let i = endRow; i >= startRow; i--) {
+      matrix[i][startCol] = counter
+      counter++
+    }
+    startCol++
+  }
+  return matrix
+}
+console.log(matrix(4))
