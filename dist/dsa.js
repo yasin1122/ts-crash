@@ -358,3 +358,13 @@ function createEvents() {
     }
   }
 }
+const myEvents = createEvents()
+
+myEvents.on('login', user => {
+  console.log('Welcome', user)
+})
+
+myEvents.trigger('login', 'Yasin') // → Welcome Yasin
+
+myEvents.off('login')
+myEvents.trigger('login', 'Yasin') // → nothing happens
