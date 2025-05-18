@@ -312,6 +312,7 @@ console.log(fib(10))
 
 // Section 29: Back to Javascript - Events
 class Events {
+  // Eventing Library Class
   constructor() {
     this.events = {} // eventName: arr of callbacks
   }
@@ -333,5 +334,27 @@ class Events {
 
   off(eventName) {
     delete this.events[eventName]
+  }
+}
+
+function createEvents() {
+  const events = {} // private event registry
+
+  return {
+    on(eventName, callback) {
+      if (!events[eventName]) {
+        events[eventName] = []
+      }
+      events[eventName].push(callback)
+    },
+    trigger(eventName, ...args) {
+      const callbacks = events[eventName]
+      if (callbacks) {
+        callbacks.forEach(callback => callback(...args))
+      }
+    },
+    off(eventName) {
+      delete events[eventName]
+    }
   }
 }
