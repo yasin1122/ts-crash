@@ -368,3 +368,5 @@ myEvents.trigger('login', 'Yasin') // → Welcome Yasin
 
 myEvents.off('login')
 myEvents.trigger('login', 'Yasin') // → nothing happens
+
+// continue elsewhere
